@@ -16,16 +16,16 @@ def show_game_board():
 def check_game():
 
     for i in range(3):
-        if game[i][0]==game[i][1]==game[i][2]=='❌' and game[i][0]!='-':
+        if game[i][0] == game[i][1] == game[i][2] == '❌' and game[i][0] != '-':
             print('player1 wins')
             print("Run Time: " + str(time.time() - start))
             exit()
-        elif game[1][1]=='❌':
-            if game[0][0]==game[2][2]=='❌':
+        elif game[1][1] == '❌':
+            if game[0][0] == game[2][2] == '❌':
                 print('player1 wins')
                 print("Run Time: " + str(time.time() - start))
                 exit()
-            elif game[0][2]==game[2][0]=='❌':
+            elif game[0][2] == game[2][0] == '❌':
                 print('player1 wins')
                 print("Run Time: " + str(time.time() - start))
                 exit()
@@ -49,9 +49,9 @@ def check_game():
 
 print('''(1)  2 players
 (2)  1player and computer''')
-choose=int(input('Choose an option :'))
-cnt=0
-if choose==1:
+choose = int(input('Choose an option :'))
+cnt = 0
+if choose == 1:
     show_game_board()
 
     while True:
@@ -66,7 +66,7 @@ if choose==1:
             if 0 <= row <= 2 and 0 <= col <= 2:
                 if game[row][col] == '-':
                     game[row][col] = '❌'
-                    cnt+=1
+                    cnt += 1
                     break
                 else:
                     print("this cell is not empty")
@@ -97,8 +97,8 @@ if choose==1:
         show_game_board()
         check_game()
 
-elif choose==2 :
-   while True :
+elif choose == 2:
+   while True:
        while True:
            print("Player ")
            row = int(input('row:'))
@@ -121,8 +121,8 @@ elif choose==2 :
            print("computer ")
            row = random.randint(0, 2)
            col = random.randint(0, 2)
-           print('row : ',row)
-           print('col : ',col)
+           print('row: ', row)
+           print('col: ', col)
            if 0 <= row <= 2 and 0 <= col <= 2:
                if game[row][col] == '-':
                    game[row][col] = '⭕'
